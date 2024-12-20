@@ -21,7 +21,7 @@ struct SelectedImage {
 };
 
 SelectedImage randomImage(const std::string& folder_name) {
-	std::string image_folder = std::string("./../images/" + folder_name);
+	std::string image_folder = std::string("images/" + folder_name);
 	std::vector<std::string> image_files;
 
 	for (const auto& entry : std::filesystem::directory_iterator(image_folder)) {
@@ -42,8 +42,6 @@ SelectedImage randomImage(const std::string& folder_name) {
 }
 
 static dpp::message random_animal(const dpp::slashcommand_t& event, const std::string& animal) {
-	srand(time(0));
-
 	int win = std::rand() % 2;
 	if (!win) {
 		int faggot_chance = (std::rand() % 100 + 1);
@@ -74,6 +72,7 @@ static dpp::message random_animal(const dpp::slashcommand_t& event, const std::s
 
 int main()
 {
+    srand(time(0));
 	/* Create bot cluster */
 	dpp::cluster bot(std::getenv("BOT_TOKEN"));
 
