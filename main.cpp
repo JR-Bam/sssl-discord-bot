@@ -92,6 +92,8 @@ int main()
 			};
 			bot.global_bulk_command_create(commands);
 		}
+
+        bot.set_presence(dpp::presence(dpp::ps_online, dpp::at_game, "with queer animals!"));
 	});
 
 	/* Handle slash command with the most recent addition to D++ features, coroutines! */
