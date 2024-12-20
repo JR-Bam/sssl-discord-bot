@@ -70,6 +70,49 @@ static dpp::message random_animal(const dpp::slashcommand_t& event, const std::s
 	}
 }
 
+void listen_on_port_8080() {
+    int server_fd, new_socket;
+    struct sockaddr_in address;
+    int addrlen = sizeof(address);
+
+    // Create socket
+    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
+        perror("Socket failed");
+        return;
+    }
+
+    // Set address structure
+    address.sin_family = AF_INET;
+    address.sin_addr.s_addr = INADDR_ANY;
+    address.sin_port = htons(8080);
+
+    // Bind socket
+    if (bind(server_fd, (struct sockaddr *)&address, sizeof(address)) < 0) {
+        perror("Bind failed");
+        return;
+    }
+
+    // Listen for incoming connections
+    if (listen(server_fd, 3) < 0) {
+        perror("Listen failed");
+        return;
+    }
+
+    std::cout << "Server is listening on port 8080..." << std::endl;
+
+    // Accept an incoming connection
+    while ((new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen)) >= 0) {
+        std::cout << "Connection accepted." << std::endl;
+
+        const char *response = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\nHello, World!";
+        send(new_socket, response, strlen(response), 0);
+		
+        close(new_socket);
+    }
+
+    close(server_fd);
+}
+
 int main()
 {
     srand(time(0));
@@ -111,8 +154,16 @@ int main()
 		}
 	});
 
-	/* Start the bot */
-	bot.start(dpp::st_wait);
+	// Start the bot in a separate thread
+    std::thread bot_thread([&bot]() {
+        bot.start(dpp::st_wait);  // This will block the thread, but not the main thread
+    });
+
+    // Start the server to listen on port 8080 in the main thread
+    listen_on_port_8080();
+
+    // Join the bot thread (optional, but ensures the main thread waits for the bot to finish)
+    bot_thread.join();
 
 	return 0;
 }
