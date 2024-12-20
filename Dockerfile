@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+EXPOSE 8080:8080
+
 # Update and install dependencies
 RUN apt-get update && apt-get install -y \
     libssl-dev \
@@ -29,5 +31,7 @@ COPY . .
 RUN mkdir /usr/src/app/build && \
     cmake -B /usr/src/app/build -H. -DCMAKE_BUILD_TYPE=Release && \
     cmake --build /usr/src/app/build
+
+    
 
 CMD ["/usr/src/app/build/sssl-discord-bot"]
