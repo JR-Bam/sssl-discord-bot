@@ -10,4 +10,4 @@ jobs:
 
     steps:
       - name: Send GET request
-        run: curl -X GET https://example.com/api/endpoint
+        run: curl -X GET https://sssl-discord-bot.onrender.com/
