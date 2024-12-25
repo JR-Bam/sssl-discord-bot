@@ -130,7 +130,8 @@ int main()
 				{ "ping", "Pingpong!", bot.me.id },
 				{ "random-samoyed", "sends a random samoyed picture, 50% chance to send faggot instead", bot.me.id},
 				{ "random-snep", "sends a random snow leopard picture, 50% chance to send faggot instead", bot.me.id},
-				{ "random-sable", "sends a random sable picture, 50% chance to send faggot instead", bot.me.id}
+				{ "random-sable", "sends a random sable picture, 50% chance to send faggot instead", bot.me.id},
+    { "random-yote", "sends a random coyote picture, 50% chance to send faggot instead. WIP", bot.me.id}
 			};
 			bot.global_bulk_command_create(commands);
 		}
@@ -152,6 +153,9 @@ int main()
 		else if (event.command.get_command_name() == "random-sable") {
 			event.reply(random_animal(event, "sables"));
 		}
+  else if (event.command.get_command_name() == "random-yote") {
+   event.reply("⚠️WIP⚠️");
+  }
 	});
 
 	// Start the bot in a separate thread
