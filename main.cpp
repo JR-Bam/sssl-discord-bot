@@ -131,7 +131,8 @@ int main()
 				{ "random-samoyed", "sends a random samoyed picture, 50% chance to send faggot instead", bot.me.id},
 				{ "random-snep", "sends a random snow leopard picture, 50% chance to send faggot instead", bot.me.id},
 				{ "random-sable", "sends a random sable picture, 50% chance to send faggot instead", bot.me.id},
-    { "random-yote", "sends a random coyote picture, 50% chance to send faggot instead. WIP", bot.me.id}
+    { "random-yote", "sends a random coyote picture, 50% chance to send faggot instead. WIP", bot.me.id},
+    { "random-yeen", "sends a random hyena picture, 50% chance to send faggot instead. WIP", bot.me.id}
 			};
 			bot.global_bulk_command_create(commands);
 		}
@@ -154,7 +155,10 @@ int main()
 			event.reply(random_animal(event, "sables"));
 		}
   else if (event.command.get_command_name() == "random-yote") {
-   event.reply("⚠️WIP⚠️");
+   event.reply("#⚠️WIP⚠️");
+  }
+  else if (event.command.get_command_name() == "random-yeen") {
+   event.reply("#⚠️WIP⚠️");
   }
 	});
 
