@@ -155,10 +155,24 @@ int main()
 			event.reply(random_animal(event, "sables"));
 		}
   else if (event.command.get_command_name() == "random-yote") {
-   event.reply("#⚠️WIP⚠️");
+   dpp::embed wip_embed;
+        
+        wip_embed.set_title("Work in Progress")
+                 .set_description("This command is still being developed. Please check back later.")
+                 .set_color(dpp::colors::orange) // You can choose any color you prefer
+                 .set_footer("Paskkal is a faggot!");
+
+        event.reply(dpp::ir_dont_delete, wip_embed);
   }
   else if (event.command.get_command_name() == "random-yeen") {
-   event.reply("#⚠️WIP⚠️");
+   dpp::embed wip_embed;
+        
+        wip_embed.set_title("Work in Progress")
+                 .set_description("This command is still being developed. Please check back later.")
+                 .set_color(dpp::colors::orange) // You can choose any color you prefer
+                 .set_footer("Pumpkin is a super faggot!");
+
+        event.reply(dpp::ir_dont_delete, wip_embed);
   }
 	});
 
