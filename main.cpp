@@ -159,7 +159,7 @@ int main()
                  .set_title("Work in Progress")
                  .set_description("This command is still being developed. Please check back later.")
                  .set_color(dpp::colors::orange) // You can choose any color you prefer
-                 .set_footer("Paskkal is a faggot!");
+                 .set_footer(dpp::embed_footer().set_text("Paskkal is a faggot!"));
 
      event.reply(dpp::message(event.command.channel_id, wip_embed));
   }
@@ -168,7 +168,7 @@ int main()
                  .set_title("Work in Progress")
                  .set_description("This command is still being developed. Please check back later.")
                  .set_color(dpp::colors::orange) // You can choose any color you prefer
-                 .set_footer("Pumpkin is a super faggot!");
+                 .set_footer(dpp::embed_footer().set_text("Pumpkin is a super faggot!"));
 
      event.reply(dpp::message(event.command.channel_id, wip_embed));
 }
