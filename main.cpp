@@ -132,7 +132,11 @@ int main()
 				{ "random-snep", "sends a random snow leopard picture, 50% chance to send faggot instead", bot.me.id},
 				{ "random-sable", "sends a random sable picture, 50% chance to send faggot instead", bot.me.id},
     			{ "random-yote", "sends a random coyote picture, 50% chance to send faggot instead. WIP", bot.me.id},
-    			{ "random-yeen", "sends a random hyena picture, 50% chance to send faggot instead", bot.me.id}
+    			{ "random-yeen", "sends a random hyena picture, 50% chance to send faggot instead", bot.me.id},
+				dpp::slashcommand()
+					.set_name("Send random animal")
+					.set_application_id(bot.me.id)
+					.set_type(dpp::ctxm_user)
 			};
 			bot.global_bulk_command_create(commands);
 		}
