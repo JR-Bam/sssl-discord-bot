@@ -155,13 +155,7 @@ int main()
 			event.reply(random_animal(event, "sables"));
 		}
 		else if (event.command.get_command_name() == "random-yote") {
-			dpp::embed wip_embed = dpp::embed()
-				.set_title("Work in Progress")
-				.set_description("This command is still being developed. Please check back later.")
-				.set_color(dpp::colors::orange) // You can choose any color you prefer
-				.set_footer(dpp::embed_footer().set_text("Paskkal is a faggot!"));
-
-			event.reply(dpp::message(event.command.channel_id, wip_embed));
+			event.reply(random_animal(event, "coyotes"));
 		}
 		else if (event.command.get_command_name() == "random-yeen") {
 			event.reply(random_animal(event, "hyenas"));
