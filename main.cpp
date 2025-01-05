@@ -44,26 +44,26 @@ SelectedImage randomImage(const std::string& folder_name) {
 static dpp::message lose(const dpp::slashcommand_t& event){
 	int faggot_chance = (std::rand() % 1000 + 1);
 	dpp::embed embed = dpp::embed();
-	if (faggot_chance < 500) { // 50% chance
+	if (faggot_chance < 500) { 					// 50% chance
 		embed.set_title("Are you a homoseksha")
 			.set_color(dpp::colors::burnt_pink);
-	} else if (faggot_chance < 800) { // 30% chance
+	} else if (faggot_chance < 800) { 			// 30% chance
 		embed.set_title("faggot.")
 			.set_description("queer even.")
 			.set_color(dpp::colors::acid_green);
-	} else if (faggot_chance < 900) { // 10% chance
+	} else if (faggot_chance < 900) { 			// 10% chance
 		embed.set_title("I know what you are")
 			.set_image("https://uploads.dailydot.com/2024/07/i-know-what-you-are.jpg?auto=compress&fm=pjpg")
 			.set_color(dpp::colors::aquamarine_stone);
-	} else if (faggot_chance < 950) { // 5% chance
+	} else if (faggot_chance < 950) { 			// 5% chance
 		embed.set_title("# F A G G O T. Q U E E R!!!!!!!!")
 			.set_color(dpp::colors::construction_cone_orange);
-	} else if (faggot_chance < 990) { // 4% chance
+	} else if (faggot_chance < 990) { 			// 4% chance
 		embed.set_title("fucking faggots")
 			.set_description("all of you fucking faggots getting on my whole nerves")
 			.set_image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW3zYZgDWKWvZIDjW2suv4CzW7NatRSOn23g&s")
 			.set_color(dpp::colors::zombie_green);
-	} else { // 1% chance
+	} else { 									// 1% chance
 		embed.set_title("HOME ESSENTIALS")
 			.set_description("‼️🚫🏳️‍🌈🔥")
 			.set_image("https://i.ytimg.com/vi/zxOkjUPS8fY/sddefault.jpg")
